@@ -14,15 +14,20 @@ $ oc new-app postgresql-persistent \
     --param POSTGRESQL_VERSION=10 \
     --param DATABASE_SERVICE_NAME=postgresql-sonar \
     -l app=sonarqube
+
+$ ./openshift-build.sh
     
 $ oc new-app sonarqube-custom \
     -e SONARQUBE_JDBC_USERNAME=sonar \
     -e SONARQUBE_JDBC_PASSWORD=sonar \
     -e SONARQUBE_JDBC_URL=jdbc:postgresql://postgresql-sonar/sonar \
     -l app=sonarqube
+
+$ oc expose service sonarqube-custom --port 9000
 ```
 
-
+## Usuário default do SonarQube
+ Por padrão o SonarQube cria um usuário administrador **admin** com senha **aadmin**
 
 ## Requisitos Instalação no HOST
 
