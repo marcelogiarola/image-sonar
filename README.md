@@ -27,7 +27,7 @@ $ oc expose service sonarqube-custom --port 9000
 ```
 
 ## Usuário default do SonarQube
- Por padrão o SonarQube cria um usuário administrador **admin** com senha **aadmin**
+ Por padrão o SonarQube cria um usuário administrador **admin** com senha **admin**
 
 ## Requisitos Instalação no HOST
 
